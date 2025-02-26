@@ -459,14 +459,14 @@ if __name__ == "__main__":
         chat_executor = ChatModelExecutor(
             # api_url="api.huiyan-ai.cn",
             api_url="xgapi.ihy.ai",
-            api_key="sk-562b8FktEaoSODPZ5k3clTFucZ0k8H2gKJHyPiAqY8pyoD3R",
+            api_key="sk-",
             model=mode_name,
             max_retries=5
         )
         executor = ModelExecutor(
             model_type="openai",
             model_name=mode_name,  # gpt-4o gpt-3.5-turbo
-            api_key="sk-U8SRnh5HsHLaf9NdVMH8NUJHSJVdac9EWQgO4ih4O28Jkmhh"
+            api_key="sk-"
         )
 
         db_config = {
