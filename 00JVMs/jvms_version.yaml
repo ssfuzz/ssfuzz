@@ -1,0 +1,25 @@
+jvms:
+  OpenJ9:
+    8: "https://github.com/ibmruntimes/openj9-openjdk-jdk8.git"
+    11: "https://github.com/ibmruntimes/openj9-openjdk-jdk11.git"
+    17: "https://github.com/ibmruntimes/openj9-openjdk-jdk17.git"
+  GraalVM:
+    8: "https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-21.2.0/graalvm-ce-java8-linux-amd64-21.2.0.tar.gz"
+    11: "https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-21.3.0/graalvm-ce-java11-linux-amd64-21.3.0.tar.gz"
+    17: "https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-21.3.0/graalvm-ce-java17-linux-amd64-21.3.0.tar.gz"
+  HotSpot:
+    8: "https://openjdk-sources.osci.io/openjdk8/openjdk8u432-ga.tar.xz"
+    11: "https://openjdk-sources.osci.io/openjdk11/openjdk-11.0.25-ga.tar.xz"
+    17: "https://openjdk-sources.osci.io/openjdk17/openjdk-17.0.13-ga.tar.xz"
+  Dragonwell:
+    8: "https://github.com/dragonwell-project/dragonwell8/archive/refs/tags/dragonwell-standard-8.23.22_jdk8u432-ga.zip"
+    11: "https://github.com/dragonwell-project/dragonwell11/archive/refs/tags/dragonwell-standard-11.0.25.21_jdk-11.0.25-ga.zip"
+    17: "https://github.com/dragonwell-project/dragonwell17/archive/refs/tags/dragonwell-standard-17.0.13.0.14+9_jdk-17.0.13-ga.zip"
+  Bisheng:
+    8: "https://github.com/openeuler-mirror/bishengjdk-8/archive/refs/tags/jdk8u392-ga-b012.zip"
+    11: "https://github.com/openeuler-mirror/bishengjdk-11/archive/refs/tags/jdk-11.0.21-ga-b012.zip"
+    17: "https://github.com/openeuler-mirror/bishengjdk-17/archive/refs/tags/jdk-17.0.9-ga-b012.zip"
+  Kona:
+    8: "https://github.com/Tencent/TencentKona-8/archive/refs/tags/8.0.20-GA.zip"
+    11: "https://github.com/Tencent/TencentKona-11/archive/refs/tags/kona11.0.25.zip"
+    17: "https://github.com/Tencent/TencentKona-17/archive/refs/tags/TencentKona-17.0.13.zip"

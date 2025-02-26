@@ -1,0 +1,109 @@
+jvms:
+  GraalVM_v11:
+    java:
+      path: /root/ssfuzz/00JVMs/compiledSources/GraalVM_v11/graalvm-ce-java11-21.3.0/bin/java
+      version: openjdk version "11.0.13" 2021-10-19
+    javac:
+      path: /root/ssfuzz/00JVMs/compiledSources/GraalVM_v11/graalvm-ce-java11-21.3.0/bin/javac
+  GraalVM_v17:
+    java:
+      path: /root/ssfuzz/00JVMs/compiledSources/GraalVM_v17/graalvm-ce-java17-21.3.0/bin/java
+      version: openjdk version "17.0.1" 2021-10-19
+    javac:
+      path: /root/ssfuzz/00JVMs/compiledSources/GraalVM_v17/graalvm-ce-java17-21.3.0/bin/javac
+  GraalVM_v8:
+    java:
+      path: /root/ssfuzz/00JVMs/compiledSources/GraalVM_v8/graalvm-ce-java8-21.2.0/bin/java
+      version: openjdk version "1.8.0_302"
+    javac:
+      path: /root/ssfuzz/00JVMs/compiledSources/GraalVM_v8/graalvm-ce-java8-21.2.0/bin/javac
+  TencentKona-11-kona11.0.25:
+    java:
+      path: /root/ssfuzz/00JVMs/compiledSources/TencentKona-11-kona11.0.25/TencentKona-11-kona11.0.25/build/linux-x86_64-normal-server-release/images/jdk/bin/java
+      version: openjdk version "11.0.25-internal" 2024-10-15
+    javac:
+      path: /root/ssfuzz/00JVMs/compiledSources/TencentKona-11-kona11.0.25/TencentKona-11-kona11.0.25/build/linux-x86_64-normal-server-release/images/jdk/bin/javac
+  TencentKona-17-TencentKona-17.0.13:
+    java:
+      path: /root/ssfuzz/00JVMs/compiledSources/TencentKona-17-TencentKona-17.0.13/TencentKona-17-TencentKona-17.0.13/build/linux-x86_64-server-release/images/jdk/bin/java
+      version: openjdk version "17.0.13-internal" 2024-10-15
+    javac:
+      path: /root/ssfuzz/00JVMs/compiledSources/TencentKona-17-TencentKona-17.0.13/TencentKona-17-TencentKona-17.0.13/build/linux-x86_64-server-release/images/jdk/bin/javac
+  TencentKona-8-8.0.20-GA:
+    java:
+      path: /root/ssfuzz/00JVMs/compiledSources/TencentKona-8-8.0.20-GA/TencentKona-8-8.0.20-GA/build/linux-x86_64-normal-server-release/images/j2sdk-image/bin/java
+      version: openjdk version "1.8.0_432-internal"
+    javac:
+      path: /root/ssfuzz/00JVMs/compiledSources/TencentKona-8-8.0.20-GA/TencentKona-8-8.0.20-GA/build/linux-x86_64-normal-server-release/images/j2sdk-image/bin/javac
+  bishengjdk-11-jdk-11.0.21-ga-b012:
+    java:
+      path: /root/ssfuzz/00JVMs/compiledSources/bishengjdk-11-jdk-11.0.21-ga-b012/bishengjdk-11-jdk-11.0.21-ga-b012/build/linux-x86_64-normal-server-release/images/jdk/bin/java
+      version: openjdk version "11.0.21-internal" 2023-10-17
+    javac:
+      path: /root/ssfuzz/00JVMs/compiledSources/bishengjdk-11-jdk-11.0.21-ga-b012/bishengjdk-11-jdk-11.0.21-ga-b012/build/linux-x86_64-normal-server-release/images/jdk/bin/javac
+  bishengjdk-17-jdk-17.0.9-ga-b012:
+    java:
+      path: /root/ssfuzz/00JVMs/compiledSources/bishengjdk-17-jdk-17.0.9-ga-b012/bishengjdk-17-jdk-17.0.9-ga-b012/build/linux-x86_64-server-release/images/jdk/bin/java
+      version: openjdk version "17.0.9-internal" 2023-10-17
+    javac:
+      path: /root/ssfuzz/00JVMs/compiledSources/bishengjdk-17-jdk-17.0.9-ga-b012/bishengjdk-17-jdk-17.0.9-ga-b012/build/linux-x86_64-server-release/images/jdk/bin/javac
+  bishengjdk-8-jdk8u392-ga-b012:
+    java:
+      path: /root/ssfuzz/00JVMs/compiledSources/bishengjdk-8-jdk8u392-ga-b012/bishengjdk-8-jdk8u392-ga-b012/build/linux-x86_64-normal-server-release/images/j2sdk-image/bin/java
+      version: openjdk version "1.8.0_392-internal"
+    javac:
+      path: /root/ssfuzz/00JVMs/compiledSources/bishengjdk-8-jdk8u392-ga-b012/bishengjdk-8-jdk8u392-ga-b012/build/linux-x86_64-normal-server-release/images/j2sdk-image/bin/javac
+  dragonwell11-dragonwell-standard-11.0.25.21_jdk-11.0.25-ga:
+    java:
+      path: /root/ssfuzz/00JVMs/compiledSources/dragonwell11-dragonwell-standard-11.0.25.21_jdk-11.0.25-ga/dragonwell11-dragonwell-standard-11.0.25.21_jdk-11.0.25-ga/build/linux-x86_64-normal-server-release/images/jdk/bin/java
+      version: openjdk version "11.0.25-internal" 2024-10-15
+    javac:
+      path: /root/ssfuzz/00JVMs/compiledSources/dragonwell11-dragonwell-standard-11.0.25.21_jdk-11.0.25-ga/dragonwell11-dragonwell-standard-11.0.25.21_jdk-11.0.25-ga/build/linux-x86_64-normal-server-release/images/jdk/bin/javac
+  dragonwell17-dragonwell-standard-17.0.13.0.14-9_jdk-17.0.13-ga:
+    java:
+      path: /root/ssfuzz/00JVMs/compiledSources/dragonwell17-dragonwell-standard-17.0.13.0.14-9_jdk-17.0.13-ga/dragonwell17-dragonwell-standard-17.0.13.0.14-9_jdk-17.0.13-ga/build/linux-x86_64-server-release/images/jdk/bin/java
+      version: openjdk version "17.0.13-internal" 2024-10-15
+    javac:
+      path: /root/ssfuzz/00JVMs/compiledSources/dragonwell17-dragonwell-standard-17.0.13.0.14-9_jdk-17.0.13-ga/dragonwell17-dragonwell-standard-17.0.13.0.14-9_jdk-17.0.13-ga/build/linux-x86_64-server-release/images/jdk/bin/javac
+  dragonwell8-dragonwell-standard-8.23.22_jdk8u432-ga:
+    java:
+      path: /root/ssfuzz/00JVMs/compiledSources/dragonwell8-dragonwell-standard-8.23.22_jdk8u432-ga/build/linux-x86_64-normal-server-release/images/j2sdk-image/bin/java
+      version: openjdk version "1.8.0_432-internal"
+    javac:
+      path: /root/ssfuzz/00JVMs/compiledSources/dragonwell8-dragonwell-standard-8.23.22_jdk8u432-ga/build/linux-x86_64-normal-server-release/images/j2sdk-image/bin/javac
+  openj9-openjdk-jdk11:
+    java:
+      path: /root/ssfuzz/00JVMs/compiledSources/openj9-openjdk-jdk11/build/linux-x86_64-normal-server-release/images/jdk/bin/java
+      version: openjdk version "11.0.26-internal" 2025-01-21
+    javac:
+      path: /root/ssfuzz/00JVMs/compiledSources/openj9-openjdk-jdk11/build/linux-x86_64-normal-server-release/images/jdk/bin/javac
+  openj9-openjdk-jdk17:
+    java:
+      path: /root/ssfuzz/00JVMs/compiledSources/openj9-openjdk-jdk17/build/linux-x86_64-server-release/images/jdk/bin/java
+      version: openjdk version "17.0.14-internal" 2025-01-21
+    javac:
+      path: /root/ssfuzz/00JVMs/compiledSources/openj9-openjdk-jdk17/build/linux-x86_64-server-release/images/jdk/bin/javac
+  openj9-openjdk-jdk8:
+    java:
+      path: /root/ssfuzz/00JVMs/compiledSources/openj9-openjdk-jdk8/build/linux-x86_64-normal-server-release/images/j2sdk-image/bin/java
+      version: openjdk version "1.8.0_442-internal"
+    javac:
+      path: /root/ssfuzz/00JVMs/compiledSources/openj9-openjdk-jdk8/build/linux-x86_64-normal-server-release/images/j2sdk-image/bin/javac
+  openjdk-11.0.25-ga.tar:
+    java:
+      path: /root/ssfuzz/00JVMs/compiledSources/openjdk-11.0.25-ga.tar/jdk-11.0.25+9/build/linux-x86_64-normal-server-release/images/jdk/bin/java
+      version: openjdk version "11.0.25-internal" 2024-10-15
+    javac:
+      path: /root/ssfuzz/00JVMs/compiledSources/openjdk-11.0.25-ga.tar/jdk-11.0.25+9/build/linux-x86_64-normal-server-release/images/jdk/bin/javac
+  openjdk-17.0.13-ga.tar:
+    java:
+      path: /root/ssfuzz/00JVMs/compiledSources/openjdk-17.0.13-ga.tar/jdk-17.0.13+11/build/linux-x86_64-server-release/images/jdk/bin/java
+      version: openjdk version "17.0.13-internal" 2024-10-15
+    javac:
+      path: /root/ssfuzz/00JVMs/compiledSources/openjdk-17.0.13-ga.tar/jdk-17.0.13+11/build/linux-x86_64-server-release/images/jdk/bin/javac
+  openjdk8u432-ga.tar:
+    java:
+      path: /root/ssfuzz/00JVMs/compiledSources/openjdk8u432-ga.tar/jdk8u432-b06/build/linux-x86_64-normal-server-release/images/j2sdk-image/bin/java
+      version: openjdk version "1.8.0_432-internal"
+    javac:
+      path: /root/ssfuzz/00JVMs/compiledSources/openjdk8u432-ga.tar/jdk8u432-b06/build/linux-x86_64-normal-server-release/images/j2sdk-image/bin/javac

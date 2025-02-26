@@ -1,0 +1,6 @@
+harness_class :
+  listTxt : "/root/ssfuzz/workline/data/list.txt"
+  code_files : "/root/ssfuzz/fuzz/"
+  code_files_cov : "/root/ssfuzz/fuzz/"
+  addExportsPath : "/root/ssfuzz/workline/data/addopens.txt"
+javac_classpath : "/root/ssfuzz/00JVMs/compiledSources/openjdk-17.0.13-ga.tar/jdk-17.0.13+11/build/linux-x86_64-server-release/jdk/lib:/root/ssfuzz/00JVMs/compiledSources/openjdk-11.0.25-ga.tar/jdk-11.0.25+9/build/linux-x86_64-normal-server-release/jdk/lib:/root/ssfuzz/00JVMs/compiledSources/openj9-openjdk-jdk17/build/linux-x86_64-server-release/jdk/lib:/root/ssfuzz/00JVMs/compiledSources/openj9-openjdk-jdk11/build/linux-x86_64-normal-server-release/jdk/lib:/root/ssfuzz/00JVMs/compiledSources/dragonwell11-dragonwell-standard-11.0.25.21_jdk-11.0.25-ga/dragonwell11-dragonwell-standard-11.0.25.21_jdk-11.0.25-ga/build/linux-x86_64-normal-server-release/jdk/lib:/root/ssfuzz/00JVMs/compiledSources/dragonwell17-dragonwell-standard-17.0.13.0.14-9_jdk-17.0.13-ga/dragonwell17-dragonwell-standard-17.0.13.0.14-9_jdk-17.0.13-ga/build/linux-x86_64-server-release/jdk/lib:/root/ssfuzz/00JVMs/compiledSources/graalvm-jdk-11.0.25/lib:/root/ssfuzz/00JVMs/compiledSources/graalvm-jdk-17.0.13+10.1/lib:/root/ssfuzz/00JVMs/compiledSources/jdk11u-dev/build/linux-x86_64-normal-server-release/jdk/lib"

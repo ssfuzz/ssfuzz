@@ -1,0 +1,10 @@
+/root/ssfuzz/01seedGenerate/GenerateTestcases/src/main/java/com/jvmfuzzing/generator/VariableComponent.java
+/root/ssfuzz/01seedGenerate/GenerateTestcases/src/main/java/com/jvmfuzzing/generator/UnprimitiveGenerator.java
+/root/ssfuzz/01seedGenerate/GenerateTestcases/src/main/java/com/jvmfuzzing/generator/PrimitiveGenerator.java
+/root/ssfuzz/01seedGenerate/GenerateTestcases/src/main/java/com/jvmfuzzing/generator/Main.java
+/root/ssfuzz/01seedGenerate/GenerateTestcases/src/main/java/com/jvmfuzzing/generator/ConstructorInfo.java
+/root/ssfuzz/01seedGenerate/GenerateTestcases/src/main/java/com/jvmfuzzing/generator/GetFiles.java
+/root/ssfuzz/01seedGenerate/GenerateTestcases/src/main/java/com/jvmfuzzing/generator/DBOperation.java
+/root/ssfuzz/01seedGenerate/GenerateTestcases/src/main/java/com/jvmfuzzing/generator/CodeVisitor.java
+/root/ssfuzz/01seedGenerate/GenerateTestcases/src/main/java/com/jvmfuzzing/generator/VariableGenerater.java
+/root/ssfuzz/01seedGenerate/GenerateTestcases/src/main/java/com/jvmfuzzing/generator/GroupGenerator.java

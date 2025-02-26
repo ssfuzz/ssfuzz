@@ -1,0 +1,4 @@
+django_tables2
+mysqlclient >=1.4.3
+loguru
+mysql-connector-python

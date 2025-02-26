@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Case</title>
+</head>
+<body>
+
+{% load filter_tools %}
+
+<form method="post">
+    <textarea name="testcase_content" rows="20" cols="150"
+              placeholder='Enter the test case'>{{ all_testcase.first.Testcase_context }}</textarea>
+    <input type="submit" value="Submit">
+</form>
+
+<table border="=1">
+    <tr>
+        <th>Testcase ID</th>
+        <th>Testcase Context</th>
+        <th>Source Function ID</th>
+        <th>Error Type</th>
+        <th>Testbed</th>
+    </tr>
+    {% for suspicious_result in all_suspicious_result %}
+        <tr>
+            <td>{{ all_testcase.first.id }}</td>
+            <td>{{ all_testcase.first.Testcase_context }}</td>
+            <td>{{ all_testcase.first.SourceFun_id }}</td>
+            <td>{{ suspicious_result.Error_type }}</td>
+            <td>{{ testbed_info|get_item:suspicious_result.Testbed_id }}</td>
+            <td>{{ suspicious_result.Testcase_context }}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+<table border="=1">
+    <tr>
+        <th>Testcase ID</th>
+        <th>Engine</th>
+        <th>Stdout</th>
+        <th>Stderr</th>
+        <th>Return Code</th>
+    </tr>
+    {% for result in testcase_result %}
+        <tr>
+            <td>{{ result.Testcase_id }}</td>
+            <td>{{ testbed_info|get_item:result.Testbed_id }}</td>
+            <td>{{ result.Stdout }}</td>
+            <td>{{ result.Stderr }}</td>
+            <td>{{ result.Returncode }}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+</body>
+
+<form method="get">
+    <input name="id">
+    <input type="submit" value="Search">
+</form>
+
+<form method="post">
+    <input name="remark">
+    <input type="submit" value="Submit">
+</form>
+</html>

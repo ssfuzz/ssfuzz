@@ -1,0 +1,39 @@
+ERROR main com.jvmfuzzing.generator.CodeVisitor - Error when add needful arguments as gloabl variables!
+Encountered unexpected token: "import" "import"
+    at line 1, column 8.
+
+Was expecting one of:
+
+    "enum"
+    "exports"
+    "module"
+    "open"
+    "opens"
+    "provides"
+    "record"
+    "requires"
+    "static"
+    "strictfp"
+    "to"
+    "transitive"
+    "uses"
+    "with"
+    "yield"
+    <IDENTIFIER>
+
+Problem stacktrace : 
+  com.github.javaparser.GeneratedJavaParser.generateParseException(GeneratedJavaParser.java:13690)
+  com.github.javaparser.GeneratedJavaParser.jj_consume_token(GeneratedJavaParser.java:13536)
+  com.github.javaparser.GeneratedJavaParser.Identifier(GeneratedJavaParser.java:3364)
+  com.github.javaparser.GeneratedJavaParser.Name(GeneratedJavaParser.java:3240)
+  com.github.javaparser.GeneratedJavaParser.ImportDeclaration(GeneratedJavaParser.java:271)
+  com.github.javaparser.GeneratedJavaParser.ImportDeclarationParseStart(GeneratedJavaParser.java:8189)
+  com.github.javaparser.JavaParser.parse(JavaParser.java:123)
+  com.github.javaparser.JavaParser.parseImport(JavaParser.java:342)
+  com.github.javaparser.StaticJavaParser.parseImport(StaticJavaParser.java:282)
+  com.github.javaparser.ast.CompilationUnit.addImport(CompilationUnit.java:430)
+  com.github.javaparser.ast.CompilationUnit.addImport(CompilationUnit.java:386)
+  com.jvmfuzzing.generator.CodeVisitor.checkAndAddImports(CodeVisitor.java:242)
+  com.jvmfuzzing.generator.CodeVisitor.createTestcase(CodeVisitor.java:318)
+  com.jvmfuzzing.generator.GenerateMain.main(GenerateMain.java:31)
+

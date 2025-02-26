@@ -1,0 +1,16 @@
+{
+    "development": {
+        "host": "10.15.0.38",
+        "port": "10348",
+        "user": "root",
+        "password": "root",
+        "database": "ssfuzzDev"
+    },
+    "test": {
+        "host": "10.15.0.38",
+        "port": "10348",
+        "user": "root",
+        "password": "root",
+        "database": "ssfuzzTest"
+    }
+}
