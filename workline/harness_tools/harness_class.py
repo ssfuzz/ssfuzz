@@ -66,7 +66,6 @@ class ThreadLock(Thread):
 
     def run(self):
         try:
-            # 添加javac编译的步骤
             self.output = self.run_test_case(self.testbed_location, self.testcase_path, self.testbed_id)
         except BaseException as e:
             self.returnInfo = 1

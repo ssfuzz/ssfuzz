@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.logging.*;
 
 public class RecordLog {
-    private static final String DATE_PATTERN_FULL = "yyyy-MM-dd HH:mm";//日期格式
+    private static final String DATE_PATTERN_FULL = "yyyy-MM-dd HH:mm";
     public static Logger logger = Logger.getLogger("log");
     private FileHandler fileHandler = null;
     private String filepath = "/root/ssfuzz/feature/src/test/log/logTest.txt";

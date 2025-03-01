@@ -50,11 +50,8 @@ MODEL_TYPES = tuple(conf.model_type for conf in MODEL_CONFIG_CLASSES)
 class ModelArguments:
     """
     Arguments pertaining to which model/config/tokenizer we are going to fine-tune, or train from scratch.
-    用于指定微调或从头训练模型时相关的模型/配置/分词器参数的参数类
     """
 
-    # 模型名称或路径。如果打算从头开始训练一个模型，此项应保留为None。
-    # 否则，可以指定一个预训练模型的检查点以初始化权重。
     model_name_or_path: Optional[str] = field(
         default=None,
         metadata={
@@ -63,13 +60,11 @@ class ModelArguments:
         },
     )
 
-    # 如果从头开始训练，需要传递的模型类型，从模型类型列表中选择。
     model_type: Optional[str] = field(
         default=None,
         metadata={"help": "If training from scratch, pass a model type from the list: " + ", ".join(MODEL_TYPES)},
     )
 
-    # 当从头训练模型时，可以用来覆盖一些默认的配置设置。
     config_overrides: Optional[str] = field(
         default=None,
         metadata={
@@ -77,30 +72,24 @@ class ModelArguments:
             "n_embd=10,resid_pdrop=0.2,scale_attn_weights=false,summary_type=cls_index"
         },
     )
-    # 预训练配置名称或路径，如果与模型名称不同。
     config_name: Optional[str] = field(
         default=None, metadata={"help": "Pretrained config name or path if not the same as model_name"}
     )
-    # 预训练分词器名称或路径，如果与模型名称不同。
     tokenizer_name: Optional[str] = field(
         default=None, metadata={"help": "Pretrained tokenizer name or path if not the same as model_name"}
     )
-    # 预训练模型下载到本地的存储位置
     cache_dir: Optional[str] = field(
         default=None,
         metadata={"help": "Where do you want to store the pretrained models downloaded from huggingface.co"},
     )
-    # 是否使用快速分词器。快速分词器基于`tokenizers`库，执行速度更快。
     use_fast_tokenizer: bool = field(
         default=True,
         metadata={"help": "Whether to use one of the fast tokenizer (backed by the tokenizers library) or not."},
     )
-    # 使用特定的模型版本，可以是分支名称、标签名称或提交id。
     model_revision: str = field(
         default="main",
         metadata={"help": "The specific model version to use (can be a branch name, tag name or commit id)."},
     )
-    # 当运行`transformers-cli login`生成token，并使用此脚本访问私有模型时，将使用该token。
     use_auth_token: bool = field(
         default=False,
         metadata={
@@ -108,8 +97,6 @@ class ModelArguments:
             "with private models)."
         },
     )
-    # 在初始化之后执行的方法，用于进行一些验证。
-    # 例如，如果设置了`config_overrides`并且同时设置了`config_name`或`model_name_or_path`，则会引发错误。
     def __post_init__(self):
         if self.config_overrides is not None and (self.config_name is not None or self.model_name_or_path is not None):
             raise ValueError(
@@ -121,24 +108,18 @@ class ModelArguments:
 class DataTrainingArguments:
     """
     Arguments pertaining to what data we are going to input our model for training and eval.
-    关于我们要输入给模型进行训练和评估的数据的参数。
     """
-    # 使用datasets库时指定的数据集名称。
     dataset_name: Optional[str] = field(
         default=None, metadata={"help": "The name of the dataset to use (via the datasets library)."}
     )
-    # 使用datasets库时指定的数据集配置名称。
     dataset_config_name: Optional[str] = field(
         default=None, metadata={"help": "The configuration name of the dataset to use (via the datasets library)."}
     )
-    # 输入训练数据文件（一个文本文件）。
     train_file: Optional[str] = field(default=None, metadata={"help": "The input training data file (a text file)."})
-    # 输入评估数据文件（一个文本文件），用于在上面评估困惑度。
     validation_file: Optional[str] = field(
         default=None,
         metadata={"help": "An optional input evaluation data file to evaluate the perplexity on (a text file)."},
     )
-    # 为了调试目的或更快的训练，如果设置了这个值，则训练样本数量将被截断到这个值。
     max_train_samples: Optional[int] = field(
         default=None,
         metadata={
@@ -146,7 +127,6 @@ class DataTrainingArguments:
             "value if set."
         },
     )
-    # 为了调试目的或更快的训练，如果设置了这个值，则评估样本数量将被截断到这个值。
     max_eval_samples: Optional[int] = field(
         default=None,
         metadata={
@@ -154,8 +134,6 @@ class DataTrainingArguments:
             "value if set."
         },
     )
-    # 分词之后的可选输入序列长度。训练数据集将会被截断到这个大小进行训练。
-    # 默认为模型对单个句子输入的最大长度（考虑到了特殊TOKEN）。
     block_size: Optional[int] = field(
         default=None,
         metadata={
@@ -164,33 +142,27 @@ class DataTrainingArguments:
             "Default to the model max input length for single sentence inputs (take into account special tokens)."
         },
     )
-    # 是否覆盖缓存的训练和评估集
     overwrite_cache: bool = field(
         default=False, metadata={"help": "Overwrite the cached training and evaluation sets"}
     )
-    # 如果没有验证集，将训练集的一部分百分比用作验证集。
     validation_split_percentage: Optional[int] = field(
         default=5,
         metadata={
             "help": "The percentage of the train set used as validation set in case there's no validation split"
         },
     )
-    # 用于预处理的进程数。
     preprocessing_num_workers: Optional[int] = field(
         default=None,
         metadata={"help": "The number of processes to use for the preprocessing."},
     )
-    # 使用TXT文件时，是否保留换行符。
     keep_linebreaks: bool = field(
         default=True, metadata={"help": "Whether to keep line breaks when using TXT files or not."}
     )
 
     def __post_init__(self):
-        # 在初始化后进行的验证，确保已经给出了数据集名称或训练/验证文件。
         if self.dataset_name is None and self.train_file is None and self.validation_file is None:
             raise ValueError("Need either a dataset name or a training/validation file.")
         else:
-            # 确保训练文件和验证文件是支持的格式。
             if self.train_file is not None:
                 extension = self.train_file.split(".")[-1]
                 assert extension in ["csv", "json", "txt"], "`train_file` should be a csv, a json or a txt file."
@@ -200,16 +172,12 @@ class DataTrainingArguments:
 
 
 def main():
-    # 解析命令行参数或从JSON文件中读取参数
     parser = HfArgumentParser((ModelArguments, DataTrainingArguments, TrainingArguments))
     if len(sys.argv) == 2 and sys.argv[1].endswith(".json"):
-        # 如果脚本运行时只提供了一个JSON文件作为参数，从这个JSON文件中解析参数
         model_args, data_args, training_args = parser.parse_json_file(json_file=os.path.abspath(sys.argv[1]))
     else:
-        # 否则，从命令行解析参数
         model_args, data_args, training_args = parser.parse_args_into_dataclasses()
 
-    # 设置日志
     logging.basicConfig(
         format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
         datefmt="%m/%d/%Y %H:%M:%S",
@@ -217,7 +185,6 @@ def main():
             logging.FileHandler('ssfuzz_trainModel.log')
         ],
     )
-    # 设置Transformers和Datasets库的日志级别
     log_level = training_args.get_process_log_level()
     logger.setLevel(log_level)
     datasets.utils.logging.set_verbosity(log_level)
@@ -225,14 +192,12 @@ def main():
     transformers.utils.logging.enable_default_handler()
     transformers.utils.logging.enable_explicit_format()
 
-    # 日志记录本次进程的配置信息
     logger.warning(
         f"Process rank: {training_args.local_rank}, device: {training_args.device}, n_gpu: {training_args.n_gpu}"
         + f"distributed training: {bool(training_args.local_rank != -1)}, 16-bits training: {training_args.fp16}"
     )
     logger.info(f"Training/evaluation parameters {training_args}")
 
-    # 检测是否有可继续的训练检查点
     last_checkpoint = None
     if os.path.isdir(training_args.output_dir) and training_args.do_train and not training_args.overwrite_output_dir:
         last_checkpoint = get_last_checkpoint(training_args.output_dir)
@@ -247,12 +212,9 @@ def main():
                 "the `--output_dir` or add `--overwrite_output_dir` to train from scratch."
             )
 
-    # 设置随机种子来增加可复现性
     set_seed(training_args.seed)
 
-    # 加载和准备数据集
     if data_args.dataset_name is not None:
-        # 从Hugging Face Hub下载数据集
         raw_datasets = load_dataset(
             data_args.dataset_name,
             data_args.dataset_config_name,
@@ -275,7 +237,6 @@ def main():
                 use_auth_token=True if model_args.use_auth_token else None,
             )
     else:
-        # 从本地文件加载数据集
         data_files = {}
         dataset_args = {}
         if data_args.train_file is not None:
@@ -331,7 +292,6 @@ def main():
         "use_auth_token": True if model_args.use_auth_token else None,
     }
 
-    # 加载预训练模型和分词器
     if model_args.config_name:
         config = AutoConfig.from_pretrained(model_args.config_name, **config_kwargs)
     elif model_args.model_name_or_path:
@@ -387,7 +347,6 @@ def main():
     # since this will be pickled to avoid _LazyModule error in Hasher force logger loading before tokenize_function
     tok_logger = transformers.utils.logging.get_logger("transformers.tokenization_utils_base")
 
-    # 数据预处理和分词
     def tokenize_function(examples):
         with CaptureLogger(tok_logger) as cl:
             output = tokenizer(examples[text_column_name])
@@ -424,7 +383,6 @@ def main():
             )
         block_size = min(data_args.block_size, tokenizer.model_max_length)
 
-    # 数据块分组处理，便于模型训练
     def group_texts(examples):
         # Concatenate all texts.
         concatenated_examples = {k: list(chain(*examples[k])) for k in examples.keys()}
@@ -457,7 +415,6 @@ def main():
             desc=f"Grouping texts in chunks of {block_size}",
         )
 
-    # 准备训练集和评估集
     if training_args.do_train:
         if "train" not in tokenized_datasets:
             raise ValueError("--do_train requires a train dataset")
@@ -506,7 +463,6 @@ def main():
         else None,
     )
 
-    # 开始训练
     if training_args.do_train:
         checkpoint = None
         if training_args.resume_from_checkpoint is not None:
@@ -527,7 +483,6 @@ def main():
         trainer.save_metrics("train", metrics)
         trainer.save_state()
 
-    # 执行评估
     if training_args.do_eval:
         logger.info("*** Evaluate ***")
 
@@ -553,7 +508,6 @@ def main():
         else:
             kwargs["dataset"] = data_args.dataset_name
 
-    # 可选：将模型推送到Hugging Face Hub
     if training_args.push_to_hub:
         trainer.push_to_hub(**kwargs)
     else:

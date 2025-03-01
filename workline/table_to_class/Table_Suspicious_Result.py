@@ -71,7 +71,7 @@ class Suspicious_Result_Object(object):
         if not Returncode_block:
             pass
         else:
-            print('匹配到return code', self.Returncode)
+            print('match return code', self.Returncode)
             error_info_list = self.extractYaml2(Returncode_block['error_info'])
             if len(error_info_list) == 0:
                 pass

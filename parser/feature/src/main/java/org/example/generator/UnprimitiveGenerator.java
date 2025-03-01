@@ -85,7 +85,6 @@ public class UnprimitiveGenerator {
             compList.add(this.generateFunctional(varType, varName));
             return compList;
         } else {
-            //数据库查询类信息
             String implementingClassName = "";
             String oneConstructor = "";
             ConstructorInfo constructorInfo = null;

@@ -305,7 +305,7 @@ def generate(args):
 
 def print_or_write(args, start_index, total_iterations=1):
     print_or_write = args.print_or_write
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")  # 使用当前时间生成唯一文件夹名称
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S") 
     base_dir = f"./seeds/{timestamp}"
 
     for i in tqdm(range(total_iterations), desc="Generating", leave=True):
@@ -325,10 +325,8 @@ def print_or_write(args, start_index, total_iterations=1):
     print("Generation completed.")
 
 if __name__ == "__main__":
-    print("正在生成...")
     args = get_args(prompt="import java", num_return_sequences=100)
     print_or_write(args, 0, 2)
     #
-    # print("进行语法检查...")
     # task = os.popen("cd ./generate_tools/GrammaCheck && javac SaveIntoDatabase.java && java SaveIntoDatabase.java")
     # task.close()

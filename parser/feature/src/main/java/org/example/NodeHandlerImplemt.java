@@ -26,7 +26,7 @@ public class NodeHandlerImplemt implements NodeIterator.NodeHandler {
         } else if (node instanceof MethodDeclaration) {
             System.out.println("MethodDeclaration:");
             String methodName = ((MethodDeclaration) node).getName().getIdentifier();
-            System.out.println("方法: " + methodName);
+            System.out.println("function: " + methodName);
             return true;
         } else if (node instanceof FieldDeclaration) {
             System.out.println("FieldDeclaration:");

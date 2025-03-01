@@ -34,7 +34,6 @@ public class Main{
                 } catch (NumberFormatException e) {
                     newnum = 0; // Default value if conversion fails
                 }
-                // TODO: 为什么用数据库
                 String testcaseContent = codeVisitor.createTestcase(cu, newnum);
                 testcases.add(testcaseContent);
                 File directory = new File(FULL_SEEDS_PATH);

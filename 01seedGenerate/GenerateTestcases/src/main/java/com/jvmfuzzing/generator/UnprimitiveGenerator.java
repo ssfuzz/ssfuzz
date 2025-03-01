@@ -44,7 +44,6 @@ public class UnprimitiveGenerator{
             return min;
         }
         Random random = new Random();
-        // +1是闭区间，不+1是左闭右开区间
         // return random.nextInt((max - min) + 1) + min;
         return random.nextInt(max - min) + min;
     }
@@ -84,7 +83,7 @@ public class UnprimitiveGenerator{
             case "UnaryOperator":case "DoubleUnaryOperator":case "LongUnaryOperator":case "IntUnaryOperator":
                 chooseNum = generateChooseNum(0,unaryOperator.length);
                 lambdaStr = "(jvmVarA) -> "+unaryOperator[chooseNum]+"jvmVarA";
-                importStmt += "java.util.function."+varType;
+                importStmt += "java.util.function."+varType；;
                 break;
             case "BinaryOperator":case "DoubleBinaryOperator":case "LongBinaryOperator":case "IntBinaryOperator":
                 chooseNum = generateChooseNum(0,binaryOperator.length);

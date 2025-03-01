@@ -131,19 +131,15 @@ public class FileOperation {
         List<List<String>> result =  new ArrayList<>();
         File rootFolder = new File(MODEL_GENERATED_PATH);
 
-        // 判断是否存在文件夹
-        if (!rootFolder.exists() || !rootFolder.isDirectory()) {
             System.err.println("Invalid root directory: " + MODEL_GENERATED_PATH);
             return result;
         }
-        // 判断文件夹下是否存在子文件夹
         File latestFolder = FileOperation.findLatestFolder(rootFolder);
         if (latestFolder == null) {
             System.err.println("No subfolders found in: " + rootFolder.getAbsolutePath());
             return result;
         }
         System.out.println("latestFolder: "+latestFolder);
-        // 处理最新的文件夹
         System.out.println("Processing folder: " + latestFolder.getAbsolutePath());
         File[] iterationFolders = latestFolder.listFiles(File::isDirectory);
         if (iterationFolders == null || iterationFolders.length == 0) {
@@ -159,7 +155,6 @@ public class FileOperation {
             }
 
             for (File javaFile : javaFiles){
-                // 提取文件内容和id
                 try{
                     String content = String.join("\n",readText(String.valueOf(javaFile.toPath())));
                     String fileName = javaFile.getName();

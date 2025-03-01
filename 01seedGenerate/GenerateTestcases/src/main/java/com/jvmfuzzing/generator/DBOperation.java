@@ -7,16 +7,15 @@ import java.sql.*;
  
 public class DBOperation {
     private static final Properties props = new Properties();
-    // 静态代码块用于加载配置文件
     static {
         try (InputStream input = DBOperation.class.getClassLoader().getResourceAsStream("db-config.properties")) {
             if (input == null) {
-                throw new IOException("无法找到配置文件 'db-config.properties'");
+                throw new IOException("can't find  'db-config.properties'");
             }
             props.load(input);
         } catch (IOException e) {
             e.printStackTrace();
-            throw new RuntimeException("加载配置文件失败", e);
+            throw new RuntimeException("load file wrong: ", e);
         }
     }
 
@@ -54,7 +53,6 @@ public class DBOperation {
         return conn;
     }
 
-    // 更新table_function  目的是：下次不要再组装了   方法：修改mutation_times
     public void updateTableFunction(String id) throws SQLException {
         Connection conn = null;
         Statement stmt = null;

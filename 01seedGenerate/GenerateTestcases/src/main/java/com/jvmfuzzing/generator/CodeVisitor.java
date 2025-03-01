@@ -279,7 +279,6 @@ public class CodeVisitor{
         if (allMethod.isEmpty()){
             return "";
         }
-        // 获取提取的最后一个方法
         MethodDeclaration extractedMethod = allMethod.get(allMethod.size()-1);
         if(hasCallItself(extractedMethod)){
             // System.out.println("The extracted method has call itself!");
@@ -287,11 +286,9 @@ public class CodeVisitor{
             return "";
         }
 
-        // 全局变量
         List<String> globalVarList = oldCUnit.findAll(FieldDeclaration.class).stream().map(f -> f.getVariable(0).getNameAsString()).collect(Collectors.toList());
 //        globalVarList.forEach(System.out::println);
 
-        // TODO: 为什么用了数据库
         MainMethodComponent mainMethodComponent = visitMethod(globalVarList,extractedMethod,newClassName);
 
         // Prepare a new compilation unit.
